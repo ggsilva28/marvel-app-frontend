@@ -21,4 +21,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public logout(): void {
+    this.authService.logout();
+  }
+
 }
