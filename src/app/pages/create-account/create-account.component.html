@@ -1,0 +1,36 @@
+<div class="container d-flex justify-content-center align-items-center">
+
+    <img src="assets/Marvel_Logo.png" alt="Marvel Logo">
+
+    <div class="form-box d-flex justify-content-center align-items-start flex-column">
+
+        <h3>Crie sua conta</h3>
+        <p>Entre com seus dados para criar conta</p>
+
+        <form class="d-flex justify-content-center align-items-start flex-column" [formGroup]="form">
+
+            <label for="email">Nome</label>
+            <div class="input input-group mb-3">
+                <input formControlName="name" type="text" class="form-control" placeholder="exemplo@email.com">
+            </div>
+
+            <label for="email">E-mail</label>
+            <div class="input input-group mb-3">
+                <input formControlName="email" type="email" class="form-control" placeholder="exemplo@email.com">
+            </div>
+
+            <label for=" email">Senha</label>
+            <div class="input input-group mb-3">
+                <input formControlName="password" type="password" class="form-control" placeholder="******">
+            </div>
+            
+        </form>
+
+        <div class="btn-box f-flex justify-content-end align-items-center">
+            <a routerLink="/login">Voltar ao login</a>
+            <button type="button" class="btn">Criar conta</button>
+        </div>
+
+    </div>
+
+</div>

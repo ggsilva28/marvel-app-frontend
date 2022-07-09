@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  color: var(--color-text);
+}
+
+.container {
+  height: 100vh;
+}
+
+.form-box {
+  width: 450px;
+  max-width: 90%;
+  height: max-content;
+  border-radius: 20px;
+  background-color: var(--color-secondary);
+  padding: 35px;
+
+  form {
+    width: 100%;
+  }
+
+  .btn-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 35px;
+  }
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+.input :is(input, input:focus) {
+  background-color: #1f193a;
+  border-color: #402ca3;
+  border-radius: 5px;
+  color: var(--color-text);
+}
+
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:active {
+  background-color: var(--color-tertiary);
+  color: var(--color-text);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.btn-transparent,
+.btn-transparent:hover,
+.btn-transparent:focus,
+.btn-transparent:active {
+  background-color: transparent;
+}
