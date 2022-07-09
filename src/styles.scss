@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 // regular style toast
-@import '~ngx-toastr/toastr';
+@import "~ngx-toastr/toastr";
 
 /* Importing Bootstrap SCSS file. */
 @import "~bootstrap/scss/bootstrap";
@@ -72,4 +72,14 @@ a {
 .btn-transparent:focus,
 .btn-transparent:active {
   background-color: transparent;
+}
+
+.toast-container.toast-top-center .ngx-toastr,
+.toast-container.toast-bottom-center .ngx-toastr {
+  box-shadow: none;
+  min-width: 40vw;
+}
+
+.toast-container.toast-bottom-center{
+  bottom: 15px;
 }

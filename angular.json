@@ -109,5 +109,7 @@
       }
     }
   },
-  "defaultProject": "marvel-app"
+  "cli": {
+    "analytics": "5d0e898d-cd90-471f-807d-b87d7fd9142a"
+  }
 }

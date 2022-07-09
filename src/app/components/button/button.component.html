@@ -1,0 +1,8 @@
+<button type="submit" class="btn" (click)="execute()" [disabled]="loading">
+    <div *ngIf="loading" class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <span *ngIf="!loading">
+        <ng-content></ng-content>
+    </span>
+</button>

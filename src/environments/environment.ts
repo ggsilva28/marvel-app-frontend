@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3003/api',
+  apiUrl: 'https://marvel-app-ggsilva28.herokuapp.com',
 };
 
 /*

@@ -23,12 +23,12 @@
             <div class="input input-group mb-3">
                 <input formControlName="password" type="password" class="form-control" placeholder="******">
             </div>
-            
+
         </form>
 
         <div class="btn-box f-flex justify-content-end align-items-center">
             <a routerLink="/login">Voltar ao login</a>
-            <button type="button" class="btn">Criar conta</button>
+            <app-button [loading]="loading" [action]="submit.bind(this)"> Criar conta </app-button>
         </div>
 
     </div>

@@ -7,7 +7,7 @@
         <h3>Bem-vindo</h3>
         <p>Entre com seus dados para logar</p>
 
-        <form class="d-flex justify-content-center align-items-start flex-column" [formGroup]="form">
+        <form class="d-flex justify-content-center align-items-start flex-column" [formGroup]="form" (keypress.enter)="submit()">
 
             <label for="email">E-mail</label>
             <div class="input input-group mb-3">
@@ -19,8 +19,9 @@
                 <input formControlName="password" type="password" class="form-control" required placeholder="******">
             </div>
 
-            <button type="submit" class="btn">Entrar</button>
         </form>
+        
+        <app-button [loading]="loading" [action]="submit.bind(this)" > Entrar </app-button>
 
         <a routerLink="/create-account">Crie sua conta agora</a>
     </div>
