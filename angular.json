@@ -32,7 +32,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/themes/variables.scss"
+              "src/themes/variables.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
