@@ -1,5 +1,5 @@
-.btn {
-  margin-left: 7.5px;
+.btn-group {
+  margin-left: 15px;
 }
 
 .btn:not(.active) {
@@ -9,4 +9,13 @@
 .pagination.disabled {
   pointer-events: none;
   opacity: 0.5;
+}
+
+
+@media (max-width: 768px) {
+  .pagination{
+    flex-direction: column;
+    margin-bottom: 15px;
+    gap: 15px;
+  }
 }
