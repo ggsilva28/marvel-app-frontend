@@ -83,3 +83,8 @@
     background-position: 160% 0, /* move highlight to right */ 0 0;
   }
 }
+
+.disabled{
+  pointer-events: none;
+  opacity: .5;
+}

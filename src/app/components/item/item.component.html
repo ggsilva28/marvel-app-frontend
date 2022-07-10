@@ -1,6 +1,6 @@
 <div *ngIf="item" class="item" (click)="openDetails()">
 
-    <div class="favorite" (click)="toggleFavorite($event)">
+    <div class="favorite" (click)="toggleFavorite($event)" [ngClass]="{disabled: loading}">
         <fa-icon *ngIf="item.isFavorite && !loading" [icon]="faStar"></fa-icon>
         <fa-icon *ngIf="!item.isFavorite && !loading" [icon]="faStarOutline"></fa-icon>
         <div *ngIf="loading" class="spinner-border" role="status">
