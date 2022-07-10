@@ -1,27 +1,20 @@
-# MarvelApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+# Marvel App - Front end
 
-## Development server
+This application allows you to create an account and see a list of characters and comics from Marvel provided by their API. You can also favorite comics and characters.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## About the stack
 
-## Code scaffolding
+This project is builded using Angular on version 14. Uses bootstrap as UI library and SCSS to customizations. All data is fetched by the [API build in Node](https://github.com/ggsilva28/marvel-app-backend). The application is hosted on [Vercel](https://vercel.com/).
+## Live Demo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+https://marvel-app-ggsilva28.vercel.app/
+## 🚀 About me
 
-## Build
+I'm a full stack developer looking to learn new technologies and experiment on diferent projects.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+See more about my skills and accomplishments 
 
-## Running unit tests
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
