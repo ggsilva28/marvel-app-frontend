@@ -7,7 +7,6 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  width: 100vw;
   height: 100vh;
   background: linear-gradient(
     to right,
@@ -76,10 +75,32 @@ a {
 
 .toast-container.toast-top-center .ngx-toastr,
 .toast-container.toast-bottom-center .ngx-toastr {
-  box-shadow: none;
-  min-width: 40vw;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+  min-width: 38vw;
+  border-radius: 10px;
+  padding: 25px 25px 25px 55px;
 }
 
-.toast-container.toast-bottom-center{
+.toast-container.toast-bottom-center {
   bottom: 15px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #352f4e;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #382780;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
 }

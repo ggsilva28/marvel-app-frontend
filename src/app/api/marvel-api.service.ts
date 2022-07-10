@@ -12,11 +12,11 @@ export class MarvelApiService {
     private request: RequestService,
   ) { }
 
-  getCharacters(offset: number = 0, limit: number = 20) {
-    return this.request.get(`/characters?offset=${offset}&limit=${limit}`);
+  getCharacters(offset: number = 0, limit: number = 30) {
+    return this.request.get(`/marvel/characters?offset=${offset}&limit=${limit}`);
   }
   
-  getComics(offset: number = 0, limit: number = 20) {
-    return this.request.get(`/comics?offset=${offset}&limit=${limit}`);
+  getComics(offset: number = 0, limit: number = 30) {
+    return this.request.get(`/marvel/comics?offset=${offset}&limit=${limit}`);
   }
 }

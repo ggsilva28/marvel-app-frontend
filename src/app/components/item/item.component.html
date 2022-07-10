@@ -1,0 +1,28 @@
+<div *ngIf="item" class="item" (click)="openDetails()">
+
+    <div class="favorite" (click)="toggleFavorite($event)">
+        <fa-icon *ngIf="item.isFavorite && !loading" [icon]="faStar"></fa-icon>
+        <fa-icon *ngIf="!item.isFavorite && !loading" [icon]="faStarOutline"></fa-icon>
+        <div *ngIf="loading" class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <div class="item-thumb">
+        <img [src]="item.thumbnail" [alt]="item.name">
+    </div>
+
+    <div class="item-footer">
+        {{item.name}}
+    </div>
+</div>
+
+<div *ngIf="!item" class="item">
+    <div class="item-thumb">
+        <div class="skeleton-loader"></div>
+    </div>
+    <div class="item-footer">
+        <div class="skeleton-loader" style="height: 15px; border-radius: 5px; width: 100%; margin-bottom: 8px;"></div>
+        <div class="skeleton-loader" style="height: 15px; border-radius: 5px; width: 50%;"></div>
+    </div>
+</div>

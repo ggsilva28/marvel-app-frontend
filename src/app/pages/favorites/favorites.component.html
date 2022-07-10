@@ -24,7 +24,7 @@
 </div>
 
 <div class="container list-grid" *ngIf="!loading">
-    <app-item *ngFor="let item of list" [item]="item" [type]="type"></app-item>
+    <app-item *ngFor="let item of list" [item]="item" [type]="type" (onToggleFavorite)="getItems(type)"></app-item>
 </div>
 
 <div class="container list-grid" *ngIf="loading">

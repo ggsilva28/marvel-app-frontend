@@ -1,0 +1,75 @@
+.header {
+  background-color: var(--color-tertiary);
+
+  .container {
+    height: 90px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .end {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a,
+  .user-name {
+    background-color: var(--color-secondary);
+    padding: 10px 25px;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 300ms;
+  }
+
+  a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+
+  a.is-active {
+    background-color: var(--color-contrast);
+    color: var(--color-primary);
+  }
+}
+
+.controls {
+  height: 45px;
+  margin-top: 45px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  .get-types {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+
+    button {
+      background-color: transparent;
+
+      &.active{
+        background-color: var(--color-tertiary);
+      }
+    }
+  }
+}
+
+.list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 25px;
+  height: max-content;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}

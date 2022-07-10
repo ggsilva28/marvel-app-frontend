@@ -22,6 +22,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
     canActivate: [AuthGuard],
     canLoad: [AuthGuard]
+  },
+  {
+    path: 'favorites',
+    loadChildren: () => import('./pages/favorites/favorites.module').then(m => m.FavoritesModule),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard]
   }
 ];
 

@@ -1,0 +1,19 @@
+<div class="pagination" [ngClass]="{disabled: disabled}">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn" [ngClass]="{active: limit == 30}" (click)="selectLimit(30)">30</button>
+        <button type="button" class="btn" [ngClass]="{active: limit == 50}" (click)="selectLimit(50)">50</button>
+        <button type="button" class="btn" [ngClass]="{active: limit == 100}" (click)="selectLimit(100)">100</button>
+    </div>
+
+    <button class="btn item-pagination" (click)="selectPage(1)">
+        Primeira
+    </button>
+
+    <button class="btn item-pagination" *ngFor="let i of getNextAndPreviousPages()" [ngClass]="{active: i === page + 1}" (click)="selectPage(i)">
+        {{i}}
+    </button>
+
+    <button class="btn item-pagination" (click)="selectPage(lastPage())">
+        Última
+    </button>
+</div>

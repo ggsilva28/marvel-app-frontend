@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 
 //Services
 import { AuthService, IUser } from 'src/app/api/auth.service';
-import { MarvelApiService } from 'src/app/api/marvel-api.service';
+import { UserFavoriteApiService } from 'src/app/api/user-favorite-api.service';
 
 //Icons
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-favorites',
+  templateUrl: './favorites.component.html',
+  styleUrls: ['./favorites.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class FavoritesComponent implements OnInit {
 
   public user: IUser;
   public faArrowRightFromBracket = faArrowRightFromBracket;
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     public authService: AuthService,
-    public marvelApiService: MarvelApiService
+    public userFavoriteApiService: UserFavoriteApiService
   ) {
     this.user = this.authService.getUser();
   }
@@ -35,33 +35,18 @@ export class HomeComponent implements OnInit {
   }
 
   getItems(type: string) {
-    if(type !== this.type) {
+    if (type !== this.type) {
       this.offset = 0;
     }
     this.type = type;
     this.list = [];
 
-    if (type === 'characters') {
-      this.getCharacters();
-    } else {
-      this.getComics();
-    }
+    this.get();
   }
 
-  async getCharacters() {
+  async get() {
     this.loading = true;
-    const response = await this.marvelApiService.getCharacters(this.offset, this.limit);
-    this.loading = false;
-
-    if (response.isOk) {
-      this.list = response.data.results;
-      this.total = response.data.total;
-    }
-  }
-
-  async getComics() {
-    this.loading = true;
-    const response = await this.marvelApiService.getComics(this.offset, this.limit);
+    const response = await this.userFavoriteApiService.getUserFavorite(this.type, this.offset, this.limit);
     this.loading = false;
 
     if (response.isOk) {

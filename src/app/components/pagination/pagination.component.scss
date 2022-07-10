@@ -1,0 +1,12 @@
+.btn {
+  margin-left: 7.5px;
+}
+
+.btn:not(.active) {
+  opacity: 0.5;
+}
+
+.pagination.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
+import { LocalStorageService } from './local-storage.service';
+
 interface requestResponse {
   isOk: boolean;
   code: number;
@@ -16,7 +18,8 @@ interface requestResponse {
 export class RequestService {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private localStorage: LocalStorageService
   ) { }
 
   get(url: string, params?: any, headers?: any) {
@@ -36,13 +39,16 @@ export class RequestService {
   }
 
   private async request(method: string, url: string, params?: any, headers?: any): Promise<requestResponse> {
+    const token = this.localStorage.get('token');
+
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Accept': 'application/json',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With'
+        'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With',
+        'Authorization': `Bearer ${token}`
       }),
       params: new HttpParams()
     };
@@ -61,7 +67,22 @@ export class RequestService {
 
     try {
 
-      const response: any = await this.http.post(environment.apiUrl + url, params, httpOptions).toPromise();
+      let response = null;
+
+      switch (method) {
+        case 'get':
+          response = await this.http.get<requestResponse>(environment.apiUrl + url, httpOptions).toPromise();
+          break;
+        case 'post':
+          response = await this.http.post<requestResponse>(environment.apiUrl + url, params, httpOptions).toPromise();
+          break;
+        case 'put':
+          response = await this.http.put<requestResponse>(environment.apiUrl + url, params, httpOptions).toPromise();
+          break;
+        case 'delete':
+          response = await this.http.delete<requestResponse>(environment.apiUrl + url, httpOptions).toPromise();
+          break;
+      }
 
       if (!response) {
         throw {
